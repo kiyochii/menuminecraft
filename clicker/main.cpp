@@ -1,5 +1,4 @@
 #include"gui.h"
-#include "aux.h"
 #include"click.h"
 #include <thread>
 #include <stdio.h>
@@ -37,7 +36,9 @@ int main(
 			gui::Render();
 			gui::EndRender();
 			click::acionar();
-			aux::clicar();
+			if (gui::ligar == true) {
+			click::clicar();
+			}
 			if (gui::hiden == true) {
 				ShowWindow(ui, SW_HIDE);
 				Sleep(30);
